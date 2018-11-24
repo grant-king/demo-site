@@ -1,10 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>blog</title>
-</head>
-<body>
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content_area %}
+<div class="container-fluid">
+    <div class="page-header">
+        <div class="page-header page-header-image"
+             style="background-image: url('{% static 'blog/img/blog_banner.png' %}')">
+        </div>
+    </div>
+    <div class="section">
 
-</body>
-</html>
+        <div class="about-description text-center">
+            <div class="features-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 mr-auto ml-auto">
+                            <h2 class="title custom_color11">Welcome</h2>
+                            <h4 class="description">Welcome to the Mechanical Thinking Blog. A collection of articles on tech, how-to,
+                                and development.</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="info info-hover">
+                                <div class="icon icon-info icon-circle">
+                                    <i class="now-ui-icons education_glasses "></i>
+                                </div>
+                                <h4 class="info-title">Featured Category</h4>
+                                <p class="description">Description</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="info info-hover">
+                                <div class="icon icon-info icon-circle">
+                                    <i class="now-ui-icons education_agenda-bookmark"></i>
+                                </div>
+                                <h4 class="info-title">Featured Post</h4>
+                                <p class="description">Description</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="info info-hover">
+                                <div class="icon icon-info icon-circle">
+                                    <i class="now-ui-icons education_paper"></i>
+                                </div>
+                                <h4 class="info-title">Feature</h4>
+                                <p class="description">Feature Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock content_area %}
