@@ -16,3 +16,7 @@ tests/coverage_html/
 tests/.coverage
 build/
 tests/report/
+django_project/blog/static/blog/demo/
+django_project/blog/static/blog/img/demo/
+django_project/blog/static/blog/img/ecommerce/
+django_project/blog/static/blog/img/
