@@ -3,53 +3,83 @@
 {% block content_area %}
 <div class="container-fluid">
     <div class="page-header">
-        <div class="page-header page-header-image"
+        <div class="blog-header page-header-image"
              style="background-image: url('{% static 'blog/img/blog_banner.png' %}')">
         </div>
     </div>
-    <div class="section">
+    <div class="row justify-content-center">
+        <div class="col-10 text-center">
+            <h1>Welcome</h1>
+            <h4 class="description">Welcome to the Mechanical Thinking Blog. A collection of articles on
+                tech, how-to,
+                and development.</h4>
+        </div>
+    </div>
 
-        <div class="about-description text-center">
-            <div class="features-3">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 mr-auto ml-auto">
-                            <h2 class="title custom_color11">Welcome</h2>
-                            <h4 class="description">Welcome to the Mechanical Thinking Blog. A collection of articles on tech, how-to,
-                                and development.</h4>
+    <!-- Start Blog card section -->
+    <div class="container-fluid">
+        <div class="blog-2 bg-white">
+
+            <div class="row mb-3">
+                <div class="col mb-3 text-center">
+                    <h2>Recent Articles</h2>
+                </div>
+            </div>
+            <div class="col-md-10 ml-auto mr-auto space-top">
+                <div class="row">
+                    {% for post in posts %}
+                    <div class="col-md-4">
+                        <div class="card card-blog">
+                            <div class="card-image">
+                                <a href="#pablo">
+                                    <img class="img img-raised"
+                                         src="{% static 'blog/img/gradient_poster.png' %}">
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-category text-info">Enterprise</h6>
+                                <h5 class="card-title">
+                                    <a href="#pablo">{{ post.title }}</a>
+                                </h5>
+                                <p class="card-description">
+                                    {{ post.content }}
+                                    <br>
+                                </p>
+                                <hr>
+                                <div class="card-footer">
+                                    <div class="author">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <a href="#pablo">
+                                                    <img src="{% static 'blog/img/grandma_robot_profile.jpg' %}"
+                                                         alt="..."
+                                                         class="avatar img-raised">
+                                                    <span>{{ post.author|capfirst }}</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="stats mt-2">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                {{ post.date_posted|date:"F d, Y" }}
+                                            </div>
+                                            <div class="col-12">
+                                                <i class="fa fa-clock-o" aria-hidden="true"></i> 5 min read
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="info info-hover">
-                                <div class="icon icon-info icon-circle">
-                                    <i class="now-ui-icons education_glasses "></i>
-                                </div>
-                                <h4 class="info-title">Featured Category</h4>
-                                <p class="description">Description</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="info info-hover">
-                                <div class="icon icon-info icon-circle">
-                                    <i class="now-ui-icons education_agenda-bookmark"></i>
-                                </div>
-                                <h4 class="info-title">Featured Post</h4>
-                                <p class="description">Description</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="info info-hover">
-                                <div class="icon icon-info icon-circle">
-                                    <i class="now-ui-icons education_paper"></i>
-                                </div>
-                                <h4 class="info-title">Feature</h4>
-                                <p class="description">Feature Description</p>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
-    {% endblock content_area %}
+    <!-- end Blog card section -->
+
+</div>
+{% endblock content_area %}

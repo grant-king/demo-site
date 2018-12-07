@@ -15,6 +15,7 @@
     <!-- CSS Files -->
     <link href="{% static 'blog/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'blog/css/now-ui-kit.css' %}" rel="stylesheet">
+    <link href="{% static 'blog/css/paper-kit.css' %}" rel="stylesheet">
     <link href="{% static 'blog/css/custom.css' %}" rel="stylesheet">
 
 </head>
@@ -23,49 +24,24 @@
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg  navbar-absolute navbar-transparent  custom_color11">
-        <div class="container">
-            <div class="collapse navbar-collapse" data-nav-image="{% static 'blog/img/blurred-image-1.jpg' %}" data-color="orange">
+        <div class="container-fluid">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            <div class="navbar-collapse">
                 <ul class="navbar-nav ml-auto">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenu" href="" data-toggle="dropdown">
-                      <i class="now-ui-icons design_app"></i>
-                      <p>One</p>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="./index.html">
-                        <i class="now-ui-icons business_chart-pie-36"></i>
-                        Special One
-                      </a>
-                    </div>
-                  </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown">
-                            <i class="now-ui-icons files_paper" aria-hidden="true"></i>
-                            <p>Two</p>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="../sections.html#headers">
-                                <i class="now-ui-icons shopping_box"></i> Special Two
-                            </a>
-                            <a class="dropdown-item" href="../sections.html#features">
-                                <i class="now-ui-icons ui-2_settings-90"></i> Other Two
-                            </a>
-                            <a class="dropdown-item" href="../sections.html#blogs">
-                                <i class="now-ui-icons text_align-left"></i> Last Two
-                            </a>
-                            <a class="dropdown-item" href="../sections.html#teams">
-                                <i class="now-ui-icons sport_user-run"></i> Final Two
-                            </a>
-                        </div>
-                    </li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown">
                             <i class="now-ui-icons design_image" aria-hidden="true"></i>
-                            <p>Three</p>
+                            <p>Nav</p>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="../examples/about-us.html">
-                                <i class="now-ui-icons business_bulb-63"></i> Special Three
+                            <a class="dropdown-item" href="{% url 'blog-home' %}">
+                                <i class="now-ui-icons business_bulb-63"></i> Blog Home
                             </a>
                             <a class="dropdown-item" href="../examples/blog-post.html">
                                 <i class="now-ui-icons text_align-left"></i> Other Three
@@ -79,8 +55,8 @@
                             <a class="dropdown-item" href="../examples/landing-page.html">
                                 <i class="now-ui-icons education_paper"></i> Three Revisited
                             </a>
-                            <a class="dropdown-item" href="../examples/login-page.html">
-                                <i class="now-ui-icons users_circle-08"></i> Login Page
+                            <a class="dropdown-item" href="{% url 'register' %}">
+                                <i class="now-ui-icons users_circle-08"></i> Register Page
                             </a>
                         </div>
                     </li>

@@ -1,0 +1,83 @@
+/*icons*/
+i {
+/* Homemade Vanilla */
+    color: #EBE7E4;
+}
+
+/* custom colors */
+.custom_color1 {
+/* Concealed Chrome */
+    color: #EBE74E4;
+}
+
+.custom_color2 {
+/* Earthy Crema */
+    color: #F9D4A7;
+}
+
+.custom_color3 {
+/* Weathered Taupe */
+    color: #B9A697;
+}
+
+.custom_color4 {
+/* Aquarium Turquoise */
+    color: #215C62;
+}
+
+.custom_color5 {
+/* Deep */
+    color: #1B211F;
+}
+
+/* Alternate Palette starting at 10*/
+.custom_color10 {
+/* Homemade Vanilla */
+    color: #EBE7E4;
+}
+
+.custom_color11 {
+/* Sgt Desert */
+    color: #E6E3BB;
+}
+
+.custom_color12 {
+/* Burnt Pumpkin*/
+    color: #D3741C;
+    text-color: #D3741C;
+
+}
+.color12_shadow:hover {
+/* Burnt Pumpkin*/
+      -webkit-box-shadow: 0px 15px 35px 0px rgba(211, 116, 28, 0.35);
+              box-shadow: 0px 15px 35px 0px rgba(211, 116, 28, 0.35); }
+}
+
+.custom_color13 {
+/* Old Fashioned Cherry */
+    color: #C6491A;
+}
+.custom_color14 {
+/* Morning Chocolate */
+    color: #8E4423;
+}
+/* Velvet Darkness */
+.custom_color15 {
+    color: #242729;
+}
+
+/* Custom header styles*/
+.page-header {
+  min-height: 330px;
+  max-height: 50vh;
+  padding: 0;
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden; }
+  .page-header .page-header-image {
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    z-index: -1; }
