@@ -1,7 +1,7 @@
 /*icons*/
 i {
-/* Old Fashioned Cherry */
-    color: #C6491A;
+/* Homemade Vanilla */
+    color: #EBE7E4;
 }
 
 /* custom colors */
@@ -67,7 +67,7 @@ i {
 }
 
 /* Custom header styles*/
-.page-header {
+.blog-header {
   min-height: 330px;
   max-height: 50vh;
   padding: 0;
