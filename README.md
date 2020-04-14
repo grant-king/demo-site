@@ -1,2 +1,2 @@
-# yousite
-Personal site with Django
+# Portfolio website
+Personal site made with Django.
