@@ -11,7 +11,7 @@
                     <div class="card card-register">
                         <div class="card">
                             <div class="card-body">
-                                <h3 class="card-title"> Register</h3>
+                                <h3 class="card-title">Log in</h3>
                                 <p>Get access to your client account where you can browse our complete professional
                                     history.</p> 
                                     <p>Register to view our conversations, invoices, and more.</p>
@@ -20,17 +20,17 @@
                         <form method="POST" class="register-form">
                             {% csrf_token %}
                             <fieldset class="form-group">
-                                <legend class="mb-3">Create New Account</legend>
+                                <legend class="mb-3">Log in</legend>
                                 {{ form|crispy }}
                                 </legend>
                             </fieldset>
                             <div class="form-group">
-                                <button class="btn btn-block btn-round" type="submit">Register</button>
+                                <button class="btn btn-block btn-round" type="submit">Sign in</button>
                             </div>
                         </form>
                         <div class="login">
-                            <p>Already have an account?
-                                <a href="{% url 'login' %}">Log in</a>.</p>
+                            <p>Need an account?
+                                <a href="{% url 'register' %}">Register your account</a>.</p>
                         </div>
                     </div>
                 </div>
