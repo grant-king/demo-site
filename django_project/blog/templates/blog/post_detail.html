@@ -1,0 +1,54 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<!-- Start Blog card section -->
+<div class="container-fluid">
+    <div class="col-9 ml-auto mr-auto space-top">
+        <div class="row">
+            <div class="col-9">
+                <div class="card card-blog">
+                    <div class="card-image">
+                        <a href="#">
+                            <img class="img img-raised" src="{% static 'blog/img/gradient_poster.png' %}">
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-category text-info">Machine Learning</h6>
+                        <h5 class="card-title">
+                            {{ object.title }}
+                        </h5>
+                        <p class="card-description">
+                            {{ object.content }}
+                            <br>
+                        </p>
+                        <hr>
+                        <div class="card-footer">
+                            <div class="author">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <a href="#">
+                                            <img src="{{ object.author.profile.image.url }}" alt="..."
+                                                class="avatar img-raised">
+                                            <span>By {{ object.author|capfirst }}</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="stats mt-2">
+                                <div class="row">
+                                    <div class="col-12">
+                                        {{ object.date_posted|date:"F d, Y" }}
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end Blog card section -->
+{% endblock content %}
