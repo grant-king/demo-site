@@ -1,0 +1,31 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('{% static 'blog/img/grandma_robot_nobg.png' %}')">
+        <div class="filter"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-register">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Delete Post</h3>
+                            </div>
+                        </div>
+                        <form method="POST" class="register-form">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <p>Are you sure you want to delete the post "{{ object.title }}"?</p>
+                                <button class="btn btn-block btn-round btn-danger" type="submit">Yes, Delete</button>
+                                <a class="btn btn-block btn-round btn-secondary" href="{% url 'post-detail' object.id %}">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

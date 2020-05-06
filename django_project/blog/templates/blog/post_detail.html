@@ -40,9 +40,26 @@
                                     <div class="col-12">
                                         {{ object.date_posted|date:"F d, Y" }}
                                     </div>
-                                    
+
                                 </div>
                             </div>
+                        </div>
+
+                        {% if object.author == user %}
+                        <hr>
+                        <div class="row">
+                            <div class="col-6">
+                                <a class="btn btn-secondary" href="{% url 'post-update' object.id %}">
+                                    Update
+                                </a>
+                            </div>
+
+                            <div class="col-6">
+                                <a class="btn btn-danger" href="{% url 'post-delete' object.id %}">
+                                    Delete
+                                </a>
+                            </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
