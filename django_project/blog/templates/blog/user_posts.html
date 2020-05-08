@@ -16,8 +16,8 @@
         <div class="blog-2 bg-white">
             <div class="row mb-3">
                 <div class="col mb-3 text-center">
-                    <h2>Recent Articles</h2>
-                </div>
+                    <h2>Posts by {{ view.kwargs.username }} {{ page_obj.paginator.count }}</h2>
+                </div> 
             </div>
             <div class="col-md-10 ml-auto mr-auto space-top">
                 <div class="row">

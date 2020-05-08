@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="col-9 ml-auto mr-auto space-top">
         <div class="row">
-            <div class="col-9">
+            <div class="col-9"> 
                 <div class="card card-blog">
                     <div class="card-image">
                         <a href="#">
@@ -26,7 +26,7 @@
                             <div class="author">
                                 <div class="row">
                                     <div class="col-12">
-                                        <a href="#">
+                                        <a href="{% url 'user-posts' object.author.username %}">
                                             <img src="{{ object.author.profile.image.url }}" alt="..."
                                                 class="avatar img-raised">
                                             <span>By {{ object.author|capfirst }}</span>
