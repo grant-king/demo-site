@@ -1,0 +1,57 @@
+{% extends "mysite/base.html" %}
+{% load static %}
+{% block content %}
+        <div class="row text-left justify-content-center" style="margin: 10px -15px;">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card" style="padding: 20px;"><img class="rounded card-img-top w-100 d-block" src="{% static 'mysite/img/image_1469.png' %}" /></div>
+            </div>
+            <div class="col-md-6 col-lg-7 col-xl-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Grant King</h4>
+                        <h6 class="text-muted card-subtitle mb-2">Python Developer</h6>
+                        <p class="lead card-text">Hi, I&#39;m Grant King and I live in Portland, Oregon. I am preparing to finish this current phase of my education and am trying to figure out my employment options.<br /></p>
+                        <p class="lead card-text">I was studying information technology for undergrad a few years ago, but have since been able to use that initial exposure to launch into studying this adjacent field. I am in my third year of intensively teaching myself about
+                            Python, prototyping, computer science, and various forms of interactive visualizations. <br /></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center" style="margin: 10px -15px;">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Experience</h4>
+                        <h6 class="text-muted card-subtitle mb-2">What am I familiar with?</h6>
+                        <p class="card-text">My primary experience is with writing Python programs for various visualization or processing tasks. I am comfortable with these tools and paradigms:  </p>
+                        <div class="row">
+                            <div class="col-6">
+                                <ul>
+                                    <li>OpenCV</li>
+                                    <li>Pygame</li>
+                                    <li>CUDA</li>
+                                    <li>Matplotlib</li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <ul>
+                                    <li>Object Oriented</li>
+                                    <li>Event-Driven</li>
+                                    <li>Functional</li>
+                                    <li>Discrete Simulations</li>
+                                </ul>
+                            </div>
+                        </div><a class="card-link" href="#">Github Profile</a><a class="card-link" href="#">Projects Page</a></div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-5 col-xl-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">At Present</h4>
+                        <h6 class="text-muted card-subtitle mb-2">What am I doing now?</h6>
+                        <p class="card-text">Right now I am finishing this phase of my education and attempting to add more projects to my portfolio. </p>
+                        <p class="card-text">I am currently looking for collaboration partners and volunteer projects. If you think you might be interested in working with me on a project or you have a volunteer request, please get in touch.</p><a class="card-link" href="#">Contact</a></div>
+                </div>
+            </div>
+        </div>
+{% endblock content %}
