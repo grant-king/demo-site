@@ -1,0 +1,28 @@
+{% extends "mysite/base.html" %}
+{% load static %}
+{% block content %}
+<div class="row text-left justify-content-center" style="margin: 10px -15px;">
+    <div class="col-sm-12 col-md-10 col-lg-9 col-xl-8">
+        <div class="card"><img class="card-img-top w-100 d-block" src="{% static 'mysite/img/mc_yinyang.png' %}">
+            <div class="card-body">
+                <div>
+                    <h4>Volunteer Request</h4>
+                    <h6 class="text-muted mb-2">Propose a volunteer position</h6>
+                    <p>Do you have a problem that might have a software solution? I might be able to help.</p>
+                    <p>Please fill out this form to help me figure out if I can help you.</p>
+                </div>
+                <div>
+                    <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        {{ form.as_p }}
+                    </fieldset>
+                    <div><button class="btn btn-primary" type="submit">Send Request</button></div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
