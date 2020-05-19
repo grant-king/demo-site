@@ -13,7 +13,7 @@ def collaborate(request):
         if form.is_valid():
             form.save()
             email = form.cleaned_data.get('email')
-            messages.success(request, f'Your Collaborator Request has been submitted. A copy has been sent to you at {email}.')
+            messages.success(request, f'Your Connection has been submitted. A copy has been sent to you at {email}.')
             return redirect('contact')
         else:
             pass ## flash message that form needs help
