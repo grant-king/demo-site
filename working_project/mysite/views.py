@@ -1,40 +1,6 @@
 from django.shortcuts import render
 from .models import Project
-
-project_list = [
-    {
-        'title': 'Project 1',
-        'description': 'Project Description'
-    },
-    {
-        'title': 'Project 2',
-        'description': 'Project 2 Description'
-    },
-    {
-        'title': 'Project 3',
-        'description': 'Project 3 Description'
-    },
-    {
-        'title': 'Project 4',
-        'description': 'Project Description'
-    },
-    {
-        'title': 'Project 5',
-        'description': 'Project 2 Description'
-    },
-    {
-        'title': 'Project 6',
-        'description': 'Project 3 Description'
-    },
-    {
-        'title': 'Project 7',
-        'description': 'Project Description'
-    },
-    {
-        'title': 'Project 8',
-        'description': 'Project 2 Description'
-    },
-]
+from django.views.generic import ListView, DetailView
 
 def home(request):
     return render(request, 'mysite/home.html')
@@ -44,4 +10,16 @@ def projects(request):
         'projects': Project.objects.all()
     }
     return render(request, 'mysite/projects.html', context)
+
+
+class ProjectListView(ListView):
+    model = Project
+    template_name = 'mysite/projects.html'
+    context_object_name = 'projects'
+    ordering = ['title']
+
+
+class ProjectDetailView(DetailView):
+    model = Project
+    context_object_name = 'project'
 
