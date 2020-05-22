@@ -3,20 +3,59 @@
 {% block content %}
 <div class="row text-left justify-content-center" style="margin: 10px -15px;">
     {% for project in projects %}
-    <div class="col-sm-10 col-md-6 col-lg-4 col-xl-4">
-        <div class="card">
-            <a href="{% url 'project-detail' project.id %}"> <img class="card-img-top w-100 d-block" src="{{ project.image.url }}"></a>
+    <div class="col-sm-10 col-md-6 col-lg-4 col-xl-4" style="margin-top: 0px;margin-bottom: 10px;">
+        <div class="card" data-bs-hover-animate="pulse">
+            <a href="{% url 'project-detail' project.id %}"> <img class="card-img-top w-100 d-block"
+                    src="{{ project.image.url }}"></a>
             <div class="card-body">
                 <h4 class="card-title">{{ project.title }}</h4>
                 <h6 class="text-muted card-subtitle mb-2">{{ project.subtitle }}</h6>
                 <p class="card-text">{{ project.summary }}</p>
                 <a class="btn btn-link" role="button" href="{% url 'project-detail' project.id %}">Project Detail</a>
                 {% if project.app_link %}
-                <a class="btn btn-outline-primary" role="button" href="{{ project.app_link }}">Demo App</a> 
+                <a class="btn btn-outline-primary" role="button" href="{{ project.app_link }}">Demo App</a>
                 {% endif %}
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
+
+{% if is_paginated %}
+<div class="row text-left justify-content-center" style="margin: 10px -15px;">
+    <div class="col-10 col-sm-12 col-md-11 col-lg-10 col-xl-9 text-center">
+        <div class="btn-group" role="group" style="margin-right: 0;padding-right: 0;padding-top: 0;">
+
+            {% if page_obj.has_previous %}
+            <a class="btn btn-outline-light btn-sm text-dark" role="button"
+                style="margin-left: 10px;margin-right: 10px;" href="?page=1">First Page</a>
+            <a class="btn btn-outline-light btn-sm text-dark" role="button"
+                style="margin-left: 10px;margin-right: 10px;" href="?page={{ page_obj.previous_page_number }}">Previous
+                Page</a>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+            <a class="btn btn-light btn-sm text-dark" role="button" style="margin-left: 10px;margin-right: 10px;"
+                href="?page={{ num }}">{{ num }}</a>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a class="btn btn-outline-light btn-sm text-dark" role="button"
+                style="margin-left: 10px;margin-right: 10px;" href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+            <a class="btn btn-outline-light btn-sm text-dark" role="button"
+                style="margin-left: 10px;margin-right: 10px;" href="?page={{ page_obj.next_page_number }}">Next Page</a>
+            <a class="btn btn-outline-light btn-sm text-dark" role="button"
+                style="margin-left: 10px;margin-right: 10px;" href="?page={{ page_obj.paginator.num_pages }}">Last
+                Page</a>
+            {% endif %}
+
+
+        </div>
+    </div>
+</div>
+{% endif %}
+
 {% endblock content %}

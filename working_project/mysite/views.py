@@ -17,6 +17,7 @@ class ProjectListView(ListView):
     template_name = 'mysite/projects.html'
     context_object_name = 'projects'
     ordering = ['title']
+    paginate_by = 8
 
 
 class ProjectDetailView(DetailView):
