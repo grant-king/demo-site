@@ -8,7 +8,7 @@ class Project(models.Model): #portfolio item data structure
     subtitle = models.CharField(max_length=100)
     summary = models.TextField(max_length=250)
     description = models.TextField()
-    collaborators = models.ManyToManyField(User)
+    #collaborators = models.ManyToManyField(User)
     app_link = models.URLField(blank=True)
 
     def __str__(self):
