@@ -1,61 +1,77 @@
 {% extends "mysite/base.html" %}
 {% load static %}
 {% block content %}
-        <div class="row text-left justify-content-center" style="margin: 10px -15px;">
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card" style="padding: 20px;"><img class="rounded card-img-top w-100 d-block" src="{% static 'mysite/img/image_1469.png' %}" /></div>
+<div class="row align-content-center">
+    <div class="col-sm-12 col-md-6 col-lg-5 col-xl-4">
+        <div class="card" style="padding: 20px;"><img class="rounded card-img-top w-100 d-block"
+                src="{% static 'mysite/img/image_1469.png' %}"></div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-7 col-xl-5">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Grant King</h4>
+                <h6 class="text-muted card-subtitle mb-2">Python Developer</h6>
+                <p class="card-text" style="font-size: 20px;">Hi, I'm Grant and I live in Portland, Oregon. I am
+                    preparing to finish this current phase of my education and am working on my portfolio.&nbsp;<br></p>
+                <p class="card-text">I studied information technology in undergrad and have since launched into studying
+                    this adjeacent field on my own. Now I'm entering my third year of learning about Python,
+                    prototyping, computer science, and interactive visualizations.<br></p>
             </div>
-            <div class="col-md-6 col-lg-7 col-xl-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Grant King</h4>
-                        <h6 class="text-muted card-subtitle mb-2">Python Developer</h6>
-                        <p class="lead card-text">Hi, I&#39;m Grant King and I live in Portland, Oregon. I am getting ready to finish this current phase of my education and am investigating my employment options.<br /></p>
-                        <p class="lead card-text">I studied information technology for undergrad a few years ago, and have since launched into studying this adjacent field on my own. Now I'm in my third year of intensively learning about
-                            Python, prototyping, computer science, and various forms of interactive visualizations. <br /></p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-7 col-xl-5">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Experience</h4>
+                <h6 class="text-muted card-subtitle mb-2">What am I familiar with?</h6>
+                <p class="card-text">My primary experience is with writing Python programs for various automation,
+                    visualization, or processing tasks. I am comfortable with these tools and paradigms:&nbsp;&nbsp;</p>
+                <div class="row">
+                    <div class="col-sm-6 col-md-12 col-lg-6 col-xl-6">
+                        <ul>
+                            <li>OpenCV</li>
+                            <li><a href="{% url 'projects-category' 'pygame' %}">Pygame</a></li>
+                            <li>CUDA</li>
+                            <li>Matplotlib</li>
+                        </ul>
                     </div>
+                    <div class="col-sm-6 col-md-12 col-lg-6 col-xl-6">
+                        <ul>
+                            <li>Object Oriented</li>
+                            <li>Event-Driven</li>
+                            <li>Functional</li>
+                            <li>Discrete Simulations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col"><a class="btn btn-outline-dark" role="button"
+                            href="https://github.com/grant-king">Github Profile</a></div>
+                    <div class="col"><a class="btn btn-outline-dark" role="button"
+                            href="{% url 'mysite-projects' %}">Projects Page</a></div>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center" style="margin: 10px -15px;">
-            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-5">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Experience</h4>
-                        <h6 class="text-muted card-subtitle mb-2">What am I familiar with?</h6>
-                        <p class="card-text">My primary experience is with writing Python programs for various visualization or processing tasks. I am comfortable with these tools and paradigms:  </p>
-                        <div class="row">
-                            <div class="col-6">
-                                <ul>
-                                    <li>OpenCV</li>
-                                    <li><a class="link" href="{% url 'projects-category' 'pygame' %}">Pygame</a></li>
-                                    <li>CUDA</li>
-                                    <li>Matplotlib</li>
-                                </ul>
-                            </div>
-                            <div class="col-6">
-                                <ul>
-                                    <li>Object Oriented</li>
-                                    <li>Event-Driven</li>
-                                    <li>Functional</li>
-                                    <li>Discrete Simulations</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <a class="card-link" href="https://github.com/grant-king">Github Profile</a>
-                        <a class="card-link" href="{% url 'mysite-projects' %}">Projects Page</a></div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-5 col-xl-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Now now</h4>
-                        <h6 class="text-muted card-subtitle mb-2">What am I doing now?</h6>
-                        <p class="card-text">I'm still primarily studying, but also attempting to add more projects to my portfolio. </p>
-                        <p class="card-text">I am currently looking for collaboration partners and volunteer projects. If you think you might be interested in working with me on a project or you have a volunteer request, please get in touch.</p>
-                        <a class="card-link" href="{% url 'contact' %}">Contact</a>
-                    </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-5 col-xl-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Now now</h4>
+                <h6 class="text-muted card-subtitle mb-2">What am I doing now?</h6>
+                <p class="card-text">I'm still primarily studying, but also attempting to add more projects to my
+                    portfolio.&nbsp;<br></p>
+                <p class="card-text">I am currently looking for collaboration partners and volunteer projects. If
+                    you&nbsp;think you might be interested in working with me on a project or you have a volunteer
+                    request, please get in touch.<br></p>
+                <div class="row">
+                    <div class="col"><a class="btn btn-outline-dark" role="button"
+                            href="{% url 'contact' %}">Contact</a></div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
 {% endblock content %}

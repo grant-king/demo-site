@@ -1,26 +1,26 @@
 {% extends "mysite/base.html" %}
 {% load static %}
 {% block content %}
-<div class="row text-left justify-content-center" style="margin: 10px -15px;">
-    <div class="col-sm-12 col-md-10 col-lg-9 col-xl-8">
-        <div class="card"><img class="card-img-top w-100 d-block" src="{% static 'mysite/img/mc_yinyang.png' %}">
-            <div class="card-body">
-                <h4 class="card-title">Contact me</h4>
-                <h6 class="text-muted card-subtitle mb-2">For Collaborators or Volunteer Requests</h6>
-                <div style="margin-bottom: 30px;">
-                    <p>I am looking for other professionals in training who would like to collaborate on projects
-                        to build experience and expand our portfolios. Do you think we have skills that could compliment
-                        each other?&nbsp;&nbsp;</p>
-                    <a class="btn btn-light" role="button" href="{% url 'collaborate' %}">Collaborate</a>
+        <div class="row text-left justify-content-center" style="margin: 10px -15px;">
+            <div class="col-sm-12 col-md-10 col-lg-9 col-xl-8">
+                <div class="card"><img class="card-img-top w-100 d-block" src="{% static 'mysite/img/mc_yinyang.png' %}">
+                    <div class="card-body">
+                        <h4 class="card-title">Contact me</h4>
+                        <h6 class="text-muted card-subtitle mb-2">For Collaborators or Volunteer Requests</h6>
+                        <div style="margin-bottom: 30px;">
+                            <p>I am looking for other professionals in training who would like to collaborate on&nbsp; projects to build experience and expand our portfolios. Do you think we have skills that could compliment each other?&nbsp;&nbsp;</p>
+                            <a
+                                class="btn btn-outline-dark" role="button" href="{% url 'collaborate' %}">Collaborate</a>
+                        </div>
+                        <div style="margin-bottom: 30px;">
+                            <p>I am also looking for small volunteer jobs.&nbsp;&nbsp;</p>
+                            <div class="row">
+                                <div class="col"><a class="btn btn-outline-dark" role="button" href="{% url 'volunteer_request' %}">Volunteer Request</a></div>
+                            </div>
+                        </div>
+                        <p class="card-text">Please get in touch and we can start planning.</p>
+                    </div>
                 </div>
-                <div style="margin-bottom: 30px;">
-                    <p>I am also looking for small volunteer jobs.&nbsp;&nbsp;</p><a class="btn btn-light" role="button"
-                        href="{% url 'volunteer_request' %}">Volunteer Request</a>
-                </div>
-                <p class="card-text">Please get in touch and we can start planning.</p>
             </div>
         </div>
-    </div>
-</div>
-
 {% endblock content %}

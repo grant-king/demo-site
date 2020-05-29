@@ -23,10 +23,10 @@ class Project(models.Model): #portfolio item data structure
     def __str__(self):
         return self.title
 
-    def save(self):
+    def save(self, *args, **kwargs):
         MAX_SIZE = (500, 500) #height, width
 
-        super().save()
+        super().save(self, *args, **kwargs)
         img = Image.open(self.image.path)
 
         if img.height > MAX_SIZE[0] or img.width > MAX_SIZE[1]:
